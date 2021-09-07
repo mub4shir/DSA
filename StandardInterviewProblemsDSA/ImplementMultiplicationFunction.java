@@ -34,17 +34,17 @@ Advanced guide to algorithm competition-fast exponentiation, find a^b mod p
 
 public class ImplementMultiplicationFunction {
     public static void main(String[] args) {
-        long a=10;
-        long b=10;
+        long a=1000000000;
+        long b=1000000000;
         System.out.println(mul(a,b));
+        System.out.println(a*b);
     }
 
     private static long mul(long a, long b) {
         long ans=0;
         for (; b!=0;b/=2) {
-            if(b %2==1) ans =(ans+a);
-            a=a*2;
-
+            if(b%2==1) ans+=a;
+            a+=a;
         }
         return ans;
     }
